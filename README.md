@@ -16,11 +16,11 @@ Spittoon-Draft is an innovative writing tool that combines human creativity with
 
 Spittoon-Draft is one of three powerful tools in the NSL ecosystem:
 
+- **[Spittoon-Scribe.oragenai.com](https://spittoon-scribe.oragenai.com/)** - Narrative bucket management and story generation
+- **[Spittoon-UNO.oragenai.com](https://spittoon-uno.oragenai.com/)** - Unified narrative operator, with semantic echo
 - **[Spittoon-Draft](https://github.com/MushroomFleet/Spittoon-Draft)** (this tool) - Real-time AI text enhancement with streaming
-- **[Spittoon-Scribe](https://github.com/MushroomFleet/Spittoon-Scribe)** - Narrative bucket management and story generation
-- **[Spittoon-UNO](https://github.com/MushroomFleet/Spittoon-UNO)** - Unified narrative orchestration
 
-All tools are built on the **[NSL 1.1 Specification](docs/ref/NSL-1.1-specification.md)**, a production-ready XML-based format for narrative generation projects. Model performance across these tools is validated through the **NSL-Benchmark**, where various AI models are tested for quality, speed, and cost-effectiveness.
+All tools are built on the **[NSL 1.1 Specification](docs/ref/NSL-1.1-specification.md)**, [a production-ready XML-based format](https://github.com/MushroomFleet/NSL-narrative-spittoon-language) for narrative generation projects. Model performance across these tools is validated through the **[NSL-Benchmark](https://github.com/MushroomFleet/Remembering-NSL-benchmark)**, where various AI models are tested for quality, speed, and cost-effectiveness.
 
 ### 💡 Recommended Setup
 
@@ -79,7 +79,7 @@ The application will open at `http://localhost:5173`
 #### Step 2: Choose Your AI Model
 
 1. In the Settings modal, locate the **Model Selection** dropdown
-2. For best results, select **"meta-llama/llama-3.3-70b-instruct"** (Grok 4 Fast)
+2. For best results, select **"x-ai/grok-4-fast"** (Grok 4 Fast)
 3. Alternative options:
    - `anthropic/claude-3.5-sonnet` - High quality, slower
    - `openai/gpt-4-turbo` - Excellent quality, higher cost
@@ -88,10 +88,8 @@ The application will open at `http://localhost:5173`
 #### Step 3: Customize Your Enhancement Prompt (Optional)
 
 1. In the **System Prompt** section, choose a preset or write custom instructions:
-   - **Enhance Clarity** - Professional and clear writing
-   - **Add Creativity** - Vivid imagery and descriptive language
-   - **Simplify Language** - Accessible for general audiences
-   - **Professional Tone** - Business-appropriate communication
+   - UNO and a selection of present
+   - custom to enter your own
 
 2. Or write your own custom prompt:
    ```
