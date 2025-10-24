@@ -4,7 +4,7 @@
 
 > Part of the NSL (Narrative Spittoon Language) ecosystem - powerful, low-cost tools for narrative generation and enhancement.
 
-Spittoon-Draft is an innovative writing tool that combines human creativity with AI enhancement in real-time. Write naturally in one panel while AI-powered transformations appear character-by-character in another panel, creating a unique collaborative writing experience with mesmerizing wave animations.
+Spittoon-Draft is an innovative writing tool that combines human creativity with AI enhancement in real-time. Select any text and watch as AI transforms it inline, or use split-view mode to see original and enhanced text side-by-side. With support for NSL narrative buckets, multiple view modes, and character-by-character streaming, Spittoon-Draft creates a unique collaborative writing experience.
 
 ![Version](https://img.shields.io/badge/version-1.5.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -34,12 +34,14 @@ Other compatible models include Claude 3.5 Sonnet, GPT-4 Turbo, and any OpenRout
 
 ## ✨ Features
 
-- 🎯 **Real-time Processing** - Continue writing while AI enhances previous paragraphs
+- ✍️ **Single View Mode** - Select text and enhance inline with `Ctrl+E` (main workflow)
+- 📊 **Split View Mode** - Side-by-side editing with real-time paragraph enhancement
+- 📦 **Bucket Manager** - Import and manage NSL narrative buckets for context
 - 🌊 **Wave Animation** - Smooth character-by-character transformation visualization
 - 🎨 **Customizable AI** - Choose models, adjust parameters, customize prompts
 - ⚡ **Concurrent Streams** - Process up to 3 paragraphs simultaneously
 - 💾 **Auto-Save** - Settings persist across sessions
-- ⌨️ **Keyboard Shortcuts** - Power user features for efficiency
+- ⌨️ **Keyboard Shortcuts** - Power user features for efficiency (`Ctrl+E` to enhance)
 - 🎭 **Multiple Models** - Access to all OpenRouter AI models
 - 📱 **Responsive Design** - Works on desktop, tablet, and mobile
 - 🔗 **NSL Integration** - Import narrative buckets for context-aware transformations
@@ -114,49 +116,152 @@ The application will open at `http://localhost:5173`
 
 Click **"Save Settings"** at the bottom of the modal. Your configuration is automatically saved and will persist across sessions.
 
+## 📖 View Modes
+
+Spittoon-Draft offers three powerful view modes, each optimized for different workflows:
+
+### 🎯 Single View Mode (Primary)
+
+The **main workflow** for most users. Perfect for focused inline enhancement.
+
+- **How it works**: Select any text in the editor and press `Ctrl+E` to enhance it inline
+- **Best for**: Iterative editing, polishing specific sections, maintaining flow
+- **Key features**:
+  - Text selection replaces with enhanced version
+  - Real-time processing highlights
+  - Simple, distraction-free interface
+  - Enhancement style selector at the top
+
+### 📊 Split View Mode
+
+Side-by-side editing with paragraph-based enhancement.
+
+- **How it works**: Type in the left panel, press `Ctrl+E` to detect and enhance all complete paragraphs
+- **Best for**: First drafts, comparing original vs enhanced text, batch processing
+- **Key features**:
+  - Original text in left panel
+  - Enhanced output in right panel
+  - Up to 3 concurrent paragraph transformations
+  - Wave animation for each character
+
+### 📦 Bucket View Mode
+
+Import and manage NSL narrative buckets for context-aware enhancement.
+
+- **How it works**: Import NSL files to provide narrative context (characters, world, story framework)
+- **Best for**: Long-form narrative projects, maintaining consistency, character-driven stories
+- **Key features**:
+  - View and edit imported bucket files
+  - Organized by category (framework, world, character, document)
+  - Context automatically included in enhancements
+  - Required vs optional file indicators
+
+**Switching Views**: Use the view mode selector in the header to switch between modes at any time.
+
+---
+
 ## 📖 How to Use Spittoon-Draft
 
-### Basic Workflow
+### Single View Workflow (Recommended)
+
+The primary way to use Spittoon-Draft for most writing tasks.
 
 #### 1. Start Writing
 
-Type your content in the **left editor panel**. Focus on getting your ideas down without worrying about polish:
+Type your content naturally in the editor:
 
 ```
-The detective walked into the office. It was late. 
+The detective walked into the office. It was late.
+She looked at the files on her desk. The phone rang.
+```
+
+#### 2. Select Text to Enhance
+
+Highlight any portion of text you want to improve - a sentence, paragraph, or multiple paragraphs:
+
+```
+[SELECT TEXT]
+The detective walked into the office. It was late.
 She looked at the files on her desk.
-
-
-The phone rang.
 ```
 
-#### 2. Trigger AI Enhancement
+#### 3. Press Ctrl+E
 
-Complete a paragraph by pressing **Enter twice** (creating a double line break). This signals that the paragraph is ready for enhancement:
+Press **`Ctrl+E`** (or click the **Enhance** button) to start the transformation. Watch the processing highlight:
 
 ```
-The detective walked into the office. It was late. 
+[PROCESSING...]
+The detective walked into the office. It was late.
 She looked at the files on her desk.
-[PRESS ENTER]
-[PRESS ENTER] ← This triggers processing
 ```
 
-#### 3. Watch the Transformation
+#### 4. See the Enhancement
 
-The enhanced text appears in the **right panel** with a beautiful wave animation:
+The selected text is replaced inline with the enhanced version:
 
 ```
-Detective Sarah Chen stepped through the frosted glass door, 
-the click of her heels echoing in the empty office. The amber 
-glow of street lights filtered through venetian blinds, casting 
-long shadows across the mountain of case files sprawled across 
-her mahogany desk - each one a story left unfinished, a voice 
-crying out for justice in the darkness.
+Detective Sarah Chen stepped through the frosted glass door,
+the click of her heels echoing in the empty office. The amber
+glow of street lights filtered through venetian blinds, casting
+long shadows across the case files on her mahogany desk.
 ```
 
-#### 4. Continue Writing
+#### 5. Keep Writing
 
-While the AI processes your first paragraph, continue writing the next one. The queue system handles up to 3 paragraphs simultaneously.
+Continue writing, select more text, and enhance as you go. Multiple enhancements can process simultaneously.
+
+---
+
+### Split View Workflow
+
+Alternative workflow for comparing original and enhanced text side-by-side.
+
+#### 1. Switch to Split View
+
+Use the view mode selector in the header to switch to Split View mode.
+
+#### 2. Type in Left Panel
+
+Write your content in the left editor panel:
+
+```
+The detective walked into the office. It was late.
+She looked at the files on her desk.
+```
+
+#### 3. Press Ctrl+E to Detect Paragraphs
+
+Press **`Ctrl+E`** to detect and queue all complete paragraphs for enhancement. Paragraphs must be separated by blank lines.
+
+#### 4. Watch the Transformation
+
+Enhanced text streams into the right panel with wave animation. The queue system processes up to 3 paragraphs simultaneously.
+
+---
+
+### Bucket View Workflow
+
+For narrative projects requiring consistent context.
+
+#### 1. Import NSL Bucket
+
+Click the **Import** button and select an NSL (`.nm3` or `.xml`) file containing your narrative context.
+
+#### 2. Browse Bucket Contents
+
+View imported files organized by category:
+- **Framework**: Story structure, themes, rules
+- **World**: Settings, locations, lore
+- **Character**: Character profiles, relationships
+- **Document**: Plot outlines, scene lists
+
+#### 3. Edit as Needed
+
+Click any file to view or edit its contents. Changes are saved automatically.
+
+#### 4. Switch to Enhancement
+
+Return to Single or Split view to write. The bucket context is automatically included in all enhancement requests for better consistency.
 
 ### Advanced Usage Examples
 
@@ -238,17 +343,29 @@ enjoying coffee in silence, the key is consistency and intention.
 
 ### Pro Tips
 
-1. **Keep Paragraphs Focused** - Single-topic paragraphs transform better than multi-topic ones
-2. **Use Descriptive Language** - Give the AI context about tone, setting, and emotion
-3. **Monitor the Queue** - Watch the status lights to pace your writing
-4. **Experiment with Prompts** - Different system prompts yield different enhancement styles
-5. **Save Your Work** - Copy transformed text regularly (export feature coming soon)
-6. **Adjust Temperature** - Lower for consistency, higher for creative variation
+**For Single View Mode:**
+1. **Select Strategically** - Enhance sentences, paragraphs, or entire sections based on your needs
+2. **Iterate Gradually** - Enhance one section, review, then move to the next for better control
+3. **Use Processing Highlights** - Watch the visual feedback to track active enhancements
+4. **Try Different Selections** - Experiment with enhancing different amounts of text
+
+**For Split View Mode:**
+5. **Separate Paragraphs** - Use blank lines to separate paragraphs for proper detection with `Ctrl+E`
+6. **Monitor the Queue** - Watch status lights (yellow/blue/green) to pace your writing
+7. **Keep Writing** - Continue writing while previous paragraphs process (up to 3 concurrent)
+
+**For All Modes:**
+8. **Experiment with Prompts** - Different enhancement styles yield different results (UNO, Creative, Professional, etc.)
+9. **Import Buckets** - Use NSL buckets for consistent character voices and world-building
+10. **Adjust Temperature** - Lower (0.3-0.7) for consistency, higher (1.0-1.5) for creative variation
+11. **Use Descriptive Language** - Give the AI context about tone, setting, and emotion in your draft
+12. **Save Your Work** - Copy enhanced text regularly (export feature coming soon)
 
 ### Keyboard Shortcuts
 
 | Shortcut | Action |
 |----------|--------|
+| `Ctrl/⌘ + E` | Enhance (selected text in Single View, paragraphs in Split View) |
 | `Ctrl/⌘ + ,` | Open Settings |
 | `Ctrl/⌘ + K` | Clear Queue |
 | `Ctrl/⌘ + Shift + R` | Reset All Data |
@@ -257,17 +374,34 @@ enjoying coffee in silence, the key is consistency and intention.
 
 ### Understanding the Interface
 
-#### Status Indicators
+#### Single View Mode Interface
 
-- **Yellow badge** - Paragraph in queue, waiting to process
-- **Blue badge + animation** - Currently processing with AI
-- **Green badge** - Transformation complete
+- **Enhancement Style Selector** - Choose from preset prompts (UNO, Creative, Professional, etc.) or use custom
+- **Character Count** - Shows total document length in the header
+- **Selection Count** - Displays number of characters selected when text is highlighted
+- **Processing Highlights** - Visual overlay shows which text is currently being enhanced
+- **Enhance Button** - Bottom-right button to trigger enhancement (or use `Ctrl+E`)
+- **Active Enhancements** - Counter shows how many enhancements are currently processing
 
-#### Progress Information
+#### Split View Mode Interface
 
-- **Bytes/sec** - Streaming speed from API
-- **ETA** - Estimated time to completion
-- **Character count** - Real-time character tracking
+- **Status Lights** - Colored indicators in header showing worker status
+- **Status Badges** (on paragraphs):
+  - **Yellow badge** - Paragraph in queue, waiting to process
+  - **Blue badge + animation** - Currently processing with AI
+  - **Green badge** - Transformation complete
+- **Progress Information**:
+  - **Bytes/sec** - Streaming speed from API
+  - **ETA** - Estimated time to completion
+  - **Character count** - Real-time character tracking for each panel
+
+#### Bucket View Mode Interface
+
+- **Category Sections** - Files organized by Framework, World, Character, Document
+- **File Cards** - Click any card to view/edit file contents
+- **Required Badge** - Indicates which files are marked as required in the NSL bucket
+- **Word/Character Counts** - Stats shown on each file card
+- **Edit Mode** - Modal with syntax highlighting for viewing and editing files
 
 ## 🔧 Development
 
@@ -325,13 +459,30 @@ spittoon-draft/
 
 ## 🎯 How It Works
 
+### Single View Mode
+1. **Write** your content in the editor
+2. **Select** the text you want to enhance
+3. **Press Ctrl+E** (or click Enhance button)
+4. **Processing highlight** shows the enhancement in progress
+5. **Streaming API** sends request to OpenRouter with your chosen model
+6. **Character-by-character** replacement updates text inline
+7. **Continue** writing and enhancing iteratively
+
+### Split View Mode
 1. **Type** your content in the left editor panel
-2. **Complete paragraphs** with double line breaks (Enter twice)
-3. **Auto-detection** identifies completed paragraphs
-4. **Queue system** manages up to 3 concurrent transformations
-5. **Streaming API** sends requests to OpenRouter
-6. **Wave animation** displays character-by-character enhancement
-7. **Enhanced text** appears in the right panel with smooth transitions
+2. **Press Ctrl+E** to detect complete paragraphs (separated by blank lines)
+3. **Queue system** manages up to 3 concurrent transformations
+4. **Streaming API** sends requests to OpenRouter
+5. **Wave animation** displays character-by-character enhancement
+6. **Enhanced text** appears in the right panel with smooth transitions
+7. **Continue writing** while previous paragraphs process
+
+### Bucket View Mode
+1. **Import** NSL bucket file (`.nm3` or `.xml`)
+2. **Browse** organized files by category
+3. **Edit** any file as needed
+4. **Context** automatically included in all enhancements
+5. **Switch** back to Single or Split view to write
 
 ## 📚 Documentation
 
